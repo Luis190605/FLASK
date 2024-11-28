@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Contáctanos</h1>
+    
+    {% if submitted %}
+        <p style="text-align: center;">Gracias, {{ name }}! Tu mensaje ha sido enviado.</p>
+        <p style="text-align: center;">Correo: {{ email }}</p>
+        <p style="text-align: center;">Mensaje: {{ message }}</p>
+    {% else %}
+        <form method="POST" style="text-align: center;">
+            <label for="name">Nombre:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Correo Electrónico:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Mensaje:</label><br>
+            <textarea id="message" name="message" required></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    {% endif %}
+    
+    <nav style="text-align: center;">
+        <a href="/">Inicio</a> | <a href="/about">Acerca de</a> | <a href="/contact">Contacto</a>
+    </nav>
+</body>
+</html>
+
+
